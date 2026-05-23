@@ -1,0 +1,158 @@
+{
+  "admin_qq": {
+    "description": "管理员QQ号（多个用逗号分隔）",
+    "type": "string",
+    "default": "",
+    "hint": "拥有群管指令使用权限的管理员QQ"
+  },
+  "enable_webui": {
+    "description": "启用WebUI管理面板(端口1111)",
+    "type": "bool",
+    "default": true,
+    "hint": "是否启动独立的WebUI管理服务器"
+  },
+  "webui_port": {
+    "description": "WebUI管理面板端口",
+    "type": "int",
+    "default": 1111,
+    "hint": "独立WebUI服务器端口号"
+  },
+  "default_favorability": {
+    "description": "新用户默认好感度",
+    "type": "int",
+    "default": 50,
+    "hint": "新用户初始好感度值(0-100)"
+  },
+  "max_favorability": {
+    "description": "好感度上限",
+    "type": "int",
+    "default": 100,
+    "hint": "好感度最大值"
+  },
+  "bank_initial_balance": {
+    "description": "银行开户默认余额",
+    "type": "int",
+    "default": 100,
+    "hint": "新用户开户时默认金币数"
+  },
+  "daily_signin_reward": {
+    "description": "每日签到奖励金币",
+    "type": "int",
+    "default": 20,
+    "hint": "每日签到获得的金币"
+  },
+  "favorability_gift_cost": {
+    "description": "赠送好感度所需金币",
+    "type": "int",
+    "default": 50,
+    "hint": "每次增加好感度需要消耗的金币"
+  },
+  "self_awake_interval": {
+    "description": "自我觉醒触发间隔(分钟)",
+    "type": "int",
+    "default": 120,
+    "hint": "机器人主动发言的间隔时间(分钟)，0为关闭"
+  },
+  "waking_regex": {
+    "type": "list",
+    "description": "唤醒词正则表达式",
+    "hint": "匹配成功则触发唤醒。例如：.*机器人.* 即消息中含'机器人'时唤醒",
+    "obvious_hint": true
+  },
+  "wake_whitelist": {
+    "type": "list",
+    "description": "唤醒白名单群ID",
+    "hint": "白名单内的群聊才会触发唤醒增强。留空则不限制。使用 /wgid 获取群ID"
+  },
+  "continuous_awakening": {
+    "type": "object",
+    "description": "持续唤醒设置",
+    "hint": "持续唤醒期间内无视所有唤醒词，包括系统前缀。也可用 /wbegin 和 /wexit 手动控制",
+    "items": {
+      "enable": {
+        "type": "bool",
+        "description": "是否启用群聊持续唤醒",
+        "default": false
+      },
+      "waking_interval": {
+        "type": "int",
+        "description": "唤醒持续时长（秒）",
+        "default": 30
+      },
+      "reset_when_reply": {
+        "type": "bool",
+        "description": "回复消息时重置持续唤醒",
+        "default": false
+      }
+    }
+  },
+  "default_player_name": {
+    "description": "默认点歌平台",
+    "type": "string",
+    "options": ["网易点歌", "nj点歌", "QQ点歌", "酷狗点歌", "酷我点歌", "百度点歌", "咪咕点歌", "荔枝点歌", "蜻蜓点歌", "喜马拉雅", "5sing原创", "5sing翻唱", "全民K歌"],
+    "default": "网易点歌"
+  },
+  "nodejs_base_url": {
+    "description": "nodejs服务API地址(nj点歌用)",
+    "type": "string",
+    "default": "https://163api.qijieya.cn"
+  },
+  "song_limit": {
+    "description": "搜索歌曲数量限制",
+    "type": "int",
+    "default": 5,
+    "slider": {"min": 1, "max": 20, "step": 1}
+  },
+  "select_mode": {
+    "description": "选择模式",
+    "type": "string",
+    "options": ["text", "single"],
+    "labels": ["文本模式", "单曲模式"],
+    "default": "text"
+  },
+  "send_modes": {
+    "description": "发送模式优先级",
+    "type": "list",
+    "options": ["card(卡片模式)", "record(语音模式)", "file(文件模式)", "text(文本模式)"],
+    "default": ["card(卡片模式)", "record(语音模式)", "file(文件模式)", "text(文本模式)"]
+  },
+  "enable_comments": {
+    "description": "发送歌曲后附加评论",
+    "type": "bool",
+    "default": true
+  },
+  "enable_lyrics": {
+    "description": "发送歌曲后附加歌词图片",
+    "type": "bool",
+    "default": false
+  },
+  "proxy": {
+    "description": "代理地址",
+    "type": "string",
+    "default": "",
+    "hint": "如 http://127.0.0.1:7890，留空则直连"
+  },
+  "timeout": {
+    "description": "点歌超时时长（秒）",
+    "type": "int",
+    "default": 30,
+    "slider": {"min": 30, "max": 300, "step": 10}
+  },
+  "playlist_limit": {
+    "description": "歌单容量限制",
+    "type": "int",
+    "default": 100,
+    "slider": {"min": 10, "max": 200, "step": 1}
+  },
+  "show_builtin_cmds": {
+    "description": "帮助中显示内置指令",
+    "type": "bool",
+    "default": false
+  },
+  "plugin_blacklist": {
+    "description": "帮助插件黑名单",
+    "type": "list",
+    "default": [],
+    "hint": "黑名单里的插件不显示在帮助中"
+  }
+}

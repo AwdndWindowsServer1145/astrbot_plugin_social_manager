@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); min-height: 100vh; padding: 20px; color: #333; }
+.header { text-align: center; padding: 30px; color: #fff; }
+.header h1 { font-size: 2em; margin-bottom: 8px; }
+.header p { opacity: .9; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+.card { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 10px 40px rgba(0,0,0,.15); }
+.card h2 { font-size: 1.1em; margin-bottom: 14px; color: #667eea; border-bottom: 2px solid #f0f0f5; padding-bottom: 10px; }
+.stat { display: flex; justify-content: space-between; padding: 5px 0; font-size: .95em; }
+.stat .label { color: #888; }
+.stat .value { font-weight: 600; color: #333; }
+.rank-item { display: flex; justify-content: space-between; padding: 4px 0; font-size: .9em; border-bottom: 1px solid #f5f5f5; }
+.rank-item:last-child { border-bottom: none; }
+.rank-item .pos { color: #888; width: 24px; }
+.rank-item .name { flex: 1; color: #555; }
+.rank-item .val { font-weight: 600; color: #667eea; }
+.status-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+.status-dot.on { background: #4caf50; }
+.status-dot.off { background: #f44336; }
+.actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.actions input { flex: 1; padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: .9em; min-width: 70px; }
+.actions button { padding: 8px 16px; border: none; border-radius: 8px; background: #667eea; color: #fff; cursor: pointer; font-size: .9em; }
+.actions button:hover { background: #5a6fd6; }
+.actions button.danger { background: #e74c3c; }
+.toast { position: fixed; bottom: 30px; right: 30px; background: #333; color: #fff; padding: 12px 24px; border-radius: 10px; font-size: .9em; opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 999; }
+.toast.show { opacity: 1; }

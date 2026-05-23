@@ -1,0 +1,9 @@
+name: astrbot_plugin_social_manager
+display_name: 社交管理插件
+desc: 集成群管理、QQ空间、点歌查歌词、歌单、唤醒增强、好感度(8维情感)、银行系统、自我觉醒、帮助指令、WebUI面板的多功能插件。
+version: v2.0.0
+author: YourName
+repo: https://github.com/YourName/astrbot_plugin_social_manager
+short_desc: 群管/点歌/情感/银行/觉醒全合一
+support_platforms:
+  - aiocqhttp
