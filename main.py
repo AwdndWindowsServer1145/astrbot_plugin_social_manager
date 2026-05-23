@@ -1024,8 +1024,8 @@ class SocialManagerPlugin(Star):
 
         runner = web.AppRunner(app)
         await runner.setup()
-        site = web.TCPSite(runner, "0.0.0.0", self.webui_port)
-        logger.info(f"WebUI管理面板已启动: http://0.0.0.0:{self.webui_port}")
+        site = web.TCPSite(runner, "192.168.18.9", self.webui_port)
+        logger.info(f"WebUI管理面板已启动: http://192.168.18.9:{self.webui_port}")
         await site.start()
 
         try:
